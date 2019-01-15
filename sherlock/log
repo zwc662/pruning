@@ -1,0 +1,5 @@
+ar rcs ./src/libsherlock.a ./src/propagate_intervals.o ./src/network_computation.o ./src/gurobi_interface.o ./src/configuration.o
+ranlib ./src/libsherlock.a
+cp ./src/*.h ./include
+g++ -O3 -w -g -L ./ -L /usr/local/lib/ -L/home/depend/gurobi752/linux64/lib -o run_file main.o src/propagate_intervals.o src/network_computation.o src/gurobi_interface.o src/configuration.o -lgurobi_c++ -lgurobi81 -lm -D_GLIBCXX_USE_CXX11_ABI=0 -m64 -w
+Makefile:30: recipe for target 'run_file' failed
